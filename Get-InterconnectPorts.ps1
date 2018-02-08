@@ -67,15 +67,15 @@ Begin {
 }
 
 Process {
+    $ovwInterconnects = @()
     If ($Interconnect) {
         Write-Host "Getting interconnect: $Interconnect"
-        $ovwInterconnects = Get-HPOVInterconnect -Name $Interconnect -ApplianceConnection $ovw
+        $ovwInterconnects += Get-HPOVInterconnect -Name $Interconnect -ApplianceConnection $ovw
         $output = "UplinkInfo-$Interconnect-$(Get-Date -format 'yyyy.MM.dd.HHmm').csv"
     }
     ElseIf ($Enclosure) {
         Write-Host "Getting interconnects for enclosure: $Enclosure"
         $ovwEncl = Get-HPOVEnclosure -ApplianceConnection $ovw -Name $Enclosure
-        $ovwInterconnects = @()
         ForEach ($bay in $ovwEncl.interconnectBays) {
             If ($bay.interconnectModel -Match 'FlexFabric') {
                 $ovwInterconnects += (Send-HPOVRequest -Uri $bay.interconnectUri -Hostname $ovw.Name)
@@ -85,7 +85,7 @@ Process {
     }
     Else {
         Write-Host "Getting interconnects from appliance: $($ovw.Name)"
-        $ovwInterconnects = Get-HPOVInterconnect -ApplianceConnection $ovw | where 'Model' -match 'FlexFabric'
+        $ovwInterconnects += Get-HPOVInterconnect -ApplianceConnection $ovw | where 'Model' -match 'FlexFabric'
         $output = "UplinkInfo-$($ovw.Name)-$(Get-Date -format 'yyyy.MM.dd.HHmm').csv"
     }
     Write-Host "Number of interconnects retrieved: $($ovwInterconnects.Count)"
