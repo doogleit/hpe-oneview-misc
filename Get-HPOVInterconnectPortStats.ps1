@@ -29,12 +29,12 @@
 .EXAMPLE
     Get statistics for a single interconnect:
 
-    Get-InterconnectPortStats.ps1 -Interconnect 'MyEnclosure, interconnect 1' -Appliance oneview.mydomain.local
+    Get-HPOVInterconnectPortStats.ps1 -Interconnect 'MyEnclosure, interconnect 1' -Appliance oneview.mydomain.local
 
 .EXAMPLE
     Get statistics for all interconnects in an enclosure:
 
-    Get-InterconnectPortStats.ps1 -Enclosure 'MyEnclosure'
+    Get-HPOVInterconnectPortStats.ps1 -Enclosure 'MyEnclosure'
 
 .NOTES
     Requires HPOneView module

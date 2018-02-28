@@ -22,17 +22,17 @@
 .EXAMPLE
     Get info for all interconnects in a OneView appliance:
 
-    Get-InterconnectPorts.ps1 -Appliance oneview.mydomain.local
+    Get-HPOVInterconnectPorts.ps1 -Appliance oneview.mydomain.local
 
 .EXAMPLE
     Get info for a single interconnect:
 
-    Get-InterconnectPorts.ps1 -Interconnect 'MyEnclosure, interconnect 1' -Appliance oneview.mydomain.local
+    Get-HPOVInterconnectPorts.ps1 -Interconnect 'MyEnclosure, interconnect 1' -Appliance oneview.mydomain.local
 
 .EXAMPLE
     Get info for all interconnects in an enclosure:
 
-    Get-InterconnectPorts.ps1 -Enclosure 'MyEnclosure'
+    Get-HPOVInterconnectPorts.ps1 -Enclosure 'MyEnclosure'
 
 .NOTES
     Requires HPOneView module
