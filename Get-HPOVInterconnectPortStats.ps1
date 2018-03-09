@@ -39,6 +39,11 @@
 .NOTES
     Requires HPOneView module
 
+.LINK
+	https://hewlettpackard.github.io/POSH-HPOneView/
+
+.LINK
+	https://github.com/doogleit/hpe-oneview-misc
 #>
 [CmdletBinding()]
 param (

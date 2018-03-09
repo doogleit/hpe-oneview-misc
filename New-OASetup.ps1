@@ -1,6 +1,7 @@
 <#
 .SYNOPSIS
     Configures a HP OA for a new deployment.
+
 .DESCRIPTION
     Configures a HP OA including:
         Enclosure Name
@@ -14,25 +15,40 @@
     You must provide an OA IP address to connect to.  This is assumed to be OA1.  The next 21 consecutive
     IP addresses will be used for OA2, the interconnects (4 IPs), and iLOs (up to 16 IPs).  If you specify
     the last slot number that is populated (-LastSlot) fewer IPs will be used for the iLOs.
+	
 .PARAMETER EnclosureName
     The name of the enclosure.  This is set in the Enclosure Information section and used as the sender name
     for Alert Mail.
+	
 .PARAMETER OAIP
     The IP address of OA1.  This is used to connect to the OA and as a starting IP address for configuring the
     remaining IP addresses (OA2, interconnects, iLOs).
+	
 .PARAMETER User
     The administrator user to login to the OA.  Default is Administrator.
+	
 .PARAMETER Password
     The administrator password.
+	
 .PARAMETER LastSlot
     The last slot that is populated in the chassis.  This determines the number of iLO IP addresses assigned.
     By default this is 16 and every slot is configured.  Empty slots or slots subsumed by a full height blade
     can still be configured when not in use.
+	
 .EXAMPLE
     New-OASetup.ps1 -EnclosureName "MyEnclosure" -OAIP "10.0.0.1" -Password "xxxxxxxxxxx"
 
     This example has all required parameters so no prompts are displayed.  The password is enclosed in
     quotes to prevent any special characters from being misinterpreted by powershell.
+
+.NOTES
+	Tested on c7000 enclosures.
+
+.LINK
+	https://www.hpe.com/servers/powershell
+
+.LINK
+	https://github.com/doogleit/hpe-oneview-misc
  #>
 #Requires -version 3
 #Requires -modules HPOACmdlets

@@ -18,6 +18,12 @@
 
 .NOTES
     Tested with HPiLOCmdlets 1.3.0.1 and DL360s
+	
+.LINK
+	https://www.hpe.com/servers/powershell
+
+.LINK
+	https://github.com/doogleit/hpe-oneview-misc
 #>
 # -requires HPiLOCmdlets
 [CmdletBinding()]

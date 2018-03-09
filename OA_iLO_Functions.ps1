@@ -18,7 +18,12 @@
     less than 2.42 and update them:
 
     "10.0.0.1","10.0.0.2" | Get-OAiLOFW | where 'Version' -lt '2.42' | Update-OAiLOFW
+	
+.LINK
+	https://www.hpe.com/servers/powershell
 
+.LINK
+	https://github.com/doogleit/hpe-oneview-misc
 #>
 
 Function Get-OAiLOFW {

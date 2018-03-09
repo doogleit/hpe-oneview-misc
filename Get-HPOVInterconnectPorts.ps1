@@ -4,7 +4,7 @@
 
 .DESCRIPTION
     Gets the uplink port information for one or more interconnects in OneView.  Only FlexFabric interconnects
-    (not FiberChannel) and Ethernet ports are retrieved.  The corrensponding uplink set from the Logical
+    (not FiberChannel) and Ethernet ports are retrieved.  The corresponding uplink set from the Logical
     Interconnect Group is also retrieved for each port and the VLANs that should be configured are listed.
 
 .PARAMETER Appliance
@@ -37,6 +37,11 @@
 .NOTES
     Requires HPOneView module
 
+.LINK
+	https://hewlettpackard.github.io/POSH-HPOneView/
+
+.LINK
+	https://github.com/doogleit/hpe-oneview-misc
 #>
 [CmdletBinding()]
 param (
